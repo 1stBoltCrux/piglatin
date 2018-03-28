@@ -3,35 +3,28 @@ $(document).ready(function(){
     event.preventDefault();
 
     var sentence = $("#input").val();
-    // var vowels = ["a", "e", "i", "o", "u", "y"];
-    // var sentence = "Hello World";
-    var newWord = "dog".slice(0,2);
+    var sentenceSplit = sentence.split(" ");
+    sentenceSplit.forEach(function(word){
+      var twoLetters = word.slice(0,2);
+      var threeLetters = word.slice(0,3);
 
-      // debugger;
-        // this checks if the first letter is a vowel
-        for(var i=0; i<newWord.length; i++){
-          vowelCheck(newWord[i]);
+      if (word[0] === "a" || word[0] === "e" || word[0]=== "i" || word[0]=== "o" || word[0] === "u" || word[0] === "y") {
+        alert("First");
+      } else if
+         (word.indexOf("qu") === 0){
+          var letters;
+          letters = word.slice(0,1);
+          word = word.substr(2) + letters + "ay";
+          alert("Second");
+      }else {
+          var twoLetters = word.slice(0,2);
+          for (var i=0; i<twoLetters.length; i++) {
+  	       if	(twoLetters[i] !== "a" || twoLetters[i] !== "e" || twoLetters[i] !== "i" || twoLetters[i] !== "o" || twoLetters[i] !== "u" || twoLetters[i] !== "y"){
+              word = word.substr(2) + twoLetters + "ay";
+              alert("Third");
+            }
+          }
         }
-
-        function vowelCheck(toCheck){
-          if(toCheck[0] === "a" || toCheck[0] === "e" || toCheck[0]=== "i" || toCheck[0]=== "o" || toCheck[0] === "u" || toCheck[0] === "y") {
-            alert("got it");
-        } else {
-          alert("consonant");
-        }
-      }
-      // // for (var i=0; i<newSentence.length; i++) {
-      // // 	var word = newSentence[0];
-      // //   for(var j =0; j<word.length; j++){
-      //   	if sentence.includes("a","e","i","o","u","y")){
-      //     	alert("YAY!");
-      //      }else{
-      //      	alert("Hey!");
-      //      }
-
-//   }
-// }
-
-
+      });
+    });
   });
-});
